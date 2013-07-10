@@ -2,37 +2,8 @@
 
 #define N 1000
 
-//すべての約数を求める関数
-//約数とはその数を割り切ることができるすべての数
-void divisor(int n){
-	int x = 1;
-	while(x <= n){
-		if(n % x == 0)
-			printf("%d\n", x);
-		x++;
-	}
-}
-
-int is_perfect(int n){
-	int i, sum;
-
-	if(n <= 0)
-		return 0;
-
-	sum = 0;
-	for(i = 1; i < n; i++){
-		if(n % i == 0)
-			sum += i;
-	}
-
-	if(sum == n){
-		printf("1\n");
-		return 1;
-	}else{
-		printf("0\n");
-		return 0;
-	}
-}
+void divisor(int n);
+int is_perfect(int n);
 
 int main(){
 	int i, j, sum[N + 1];
@@ -63,4 +34,36 @@ int main(){
 	is_perfect(n);
 
 	return 0;
+}
+
+//すべての約数を求める関数
+//約数とはその数を割り切ることができるすべての数
+void divisor(int n){
+	int x = 1;
+	while(x <= n){
+		if(n % x == 0)
+			printf("%d\n", x);
+		x++;
+	}
+}
+
+int is_perfect(int n){
+	int i, sum;
+
+	if(n <= 0)
+		return 0;
+
+	sum = 0;
+	for(i = 1; i < n; i++){
+		if(n % i == 0)
+			sum += i;
+	}
+
+	if(sum == n){
+		printf("1\n");
+		return 1;
+	}else{
+		printf("0\n");
+		return 0;
+	}
 }
