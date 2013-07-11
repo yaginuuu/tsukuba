@@ -15,6 +15,7 @@ int dim[] = {1, 2, 4};
 // }
 int main(){
 	shell_sort(array1, 5);
+	print_array(array1, 5);
 }
 
 void print_array(int a[], int n){
@@ -55,10 +56,10 @@ void insertion_sort_d(int a[], int n, int d){
 	int w, i, j, k;
 	if(n <= d)
 		return;
-	for(k = 0; k < d - 1; k = ){
-		for(i = d + k; i < ){
+	for(k = 0; k < n; k = k + 1){//n?
+		for(i = d + k; i < n; i = i + d){
 			w = a[i];
-			for(j = k;)
+			for(j = k; j < i && a[j] < w; j = j + d)//??????
 				continue;
 			shift_d(a, j, i, d);
 			a[j] = w;
@@ -66,7 +67,7 @@ void insertion_sort_d(int a[], int n, int d){
 	}
 }
 
-shell_sort(int a[], int n){
+void shell_sort(int a[], int n){
 	int l;
 	//sizeofを↓のようにすると配列の要素数を検出できる
 	for(l = sizeof(dim) / sizeof(dim[0]) - 1; l >= 0; l--){
@@ -77,7 +78,7 @@ shell_sort(int a[], int n){
 void shift_d(int a[], int first, int last, int d){
 	int q;
 	for(q = last - d; first <= q; q -= d)
-		a[a + d] = a[q];
+		a[q + d] = a[q];
 }
 
 
