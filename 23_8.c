@@ -76,3 +76,7 @@ void shiftLeftBigDecimal(BigDecimal *d){
 // int compareBigDecimal(BigDecimal *d1, BigDecimal *d2){
 
 // }
+
+// int compareBigDecimal(BigDecimal *d1, BigDecimal *d2){
+  
+// }
